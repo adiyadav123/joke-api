@@ -1,4 +1,5 @@
-  {
+[
+{
     "setup": "Why don't scientists trust atoms?",
     "punchline": "Because they make up everything."
   },
@@ -274,7 +275,6 @@
     "setup": "Why do Java developers wear glasses?",
     "punchline": "Because they can't C#."
   },
-  [
   {
     "setup": "Why did the big brother always say he was cold?",
     "punchline": "Because he was a big bro-chill."
@@ -627,3 +627,4 @@
     "setup": "Why did the accountant become a chef?",
     "punchline": "To cook the books."
   }
+]
