@@ -4,27 +4,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        span{
+            color: white;
+            font-size: 20px;
+            font-family: Consolas;
+        }
+    </style>
 </head>
 <body>
   <span id="api">Random jokes will be showed here!</span>
     <script>
-    function getRandomJoke() {
-  fetch('https://adiyadav123.github.io/joke-api/joke.json')
-    .then(response => response.json())
-    .then(data => {
-//       const jokes = data;
-//       const randomIndex = Math.floor(Math.random() * jokes.length);
-//       const randomJoke = jokes[randomIndex];
-//       return randomJoke;
-    
+        // const f = await fetch('');
+        var newuser=()=>{
+  fetch("https://adiyadav123.github.io/joke-api/joke.json")
+  .then(function(response){
+    return response.json();
+  })
+  .then(function(data){
+    const random = Math.floor(Math.random() * data.length);
+    console.log(data[random]);
     const sp = document.getElementById('api');
-    sp.textContent = data;
-    
-    })
-    .catch(error => console.error(error));
+    sp.innerHTML = `
+    <span id="api">
+        <br><br>
+        {<br>
+            "setup":"${data[random].setup}",<br>
+            "punchline":"${data[random].punchline}"<br>
+        }
+        </span>
+    `;
+  })
 }
-
-getRandomJoke();
+newuser();
     </script>
 </body>
 </html>
